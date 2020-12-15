@@ -1,0 +1,263 @@
+/*-----global styles------*/
+
+body {
+    min-width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', 'sans-serif';
+    
+    
+
+    /*---header----*/
+    #header{
+        .header{
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            
+            display: flex;
+            height: fit-content;
+            align-items: center;
+            justify-content: space-between;
+            background-color: gold;
+        }
+        
+        .nav-bar{
+            display: flex;
+            flex-direction: row;
+            align-items: space-between ;
+            
+            .brand-name{
+                margin: 20px;
+                font-size: 1.2rem;
+                p{
+                    font-size: 0.8rem;
+                    color: black;
+                }
+                & a{
+                    text-decoration: none;
+
+                }
+            }
+
+            .nav-list{
+                margin: 20px;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                text-align: right;
+
+                & ul {
+                    list-style-type: none;
+                    display:inline-block;
+                    padding-left: 0;
+                    padding:0, 20px;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    & li{
+                        list-style-type:none;
+                        padding: 0,10px;
+                        display: inline-block;
+                        color: indigo;
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+                        text-decoration: none;
+                        margin: 5px;
+
+                        & a{
+                            list-style-type: none;
+                            text-decoration: none;
+                            justify-content: space-between;
+                            display: inline-flex;
+                            flex-wrap: nowrap;
+                            color: indigo;
+                            padding: 5px;
+                            margin: 10px;
+                            &:hover{
+                                background-color: indigo;
+                                color:white;
+                            }
+
+                        }
+                        
+                    }
+                    
+                }
+                
+                
+            }
+    
+        }    
+    }
+    #Product{
+        display: block;
+        float: left;;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        margin-top: auto;
+        justify-content: center;
+        .item-title{
+            display: block;
+            padding: 30px;
+            margin: 30px;
+        }
+        .food-items {
+           display: flex;
+           flex-direction: row;
+           flex-wrap: wrap;
+           align-items: center;
+           text-align: center;
+           justify-content: center;
+
+           .food-item{
+               margin:20px;
+               background-color: gray;
+               border-radius: 5%;
+               h3 {
+                   margin: 0;
+               }
+               h5 {
+                   margin: 0;
+                   a {
+                       text-decoration: none;
+                   }
+               }
+
+            }
+        }
+    } 
+    /*--cart page--*/
+    #cart {
+        .product-container {
+            max-width: 95%;
+            justify-content: space-around;
+            margin: 0 auto;
+            margin-top: 150px;
+          
+            
+            align-items: center;
+            
+            .ion-icon {
+                font-size: 25px;
+                color: blue;
+                margin-left: 10px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+    
+            .product-header {
+                
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+                justify-content: flex-start;
+               
+                margin: 0 auto;
+    
+                .product-title{
+                    width: 30%;
+                    border-bottom: 1px solid lightgray;
+    
+                }
+                .price{
+                    width: 20%;
+                    display: flex;
+                    border-bottom: 1px solid lightgray;
+                    align-items: center;
+                }
+                .quantity{
+                    width: 20%;
+                    border-bottom: 1px solid lightgray;
+                    display: flex;
+                    align-items: center;
+                }
+                .product-weight {
+                    width: 15%;
+                    border-bottom: 1px solid lightgray;
+                    display: flex;
+                    align-items: center;
+    
+                }
+                .shippingfee {
+                    width: 15%;
+                    border-bottom: 1px solid lightgray;
+                    display: flex;
+                    align-items: center;
+    
+                }
+               
+            }
+            .cart-items {
+                display: flex;
+                flex-direction: column;
+                
+                justify-content: space-around;
+                padding: 10px 0;
+                border-bottom: 1px solid lightgray;
+
+                .cart-row{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    border-bottom: 1px solid lightgray;  
+
+                    .cart-product-image{
+                        width: 30%;
+                        display: flex;
+                        flex-direction: row;
+                        .cart-item-title{
+                            padding: 20px;
+                        }
+                          
+                    }
+                    .cart-product-price{
+                        width: 20%;
+                        display: flex;                   
+                        align-items: center;
+                    }
+                    .cart-product-quantity{
+                        width: 20%;              
+                        display: flex;
+                        align-items: center;
+                    }
+                    .cart-product-kg {
+                        width: 15%;           
+                        display: flex;
+                        align-items: center;
+        
+                    }
+                    .cart-shipping-fee {
+                        width: 15%;
+                        display: flex;
+                        align-items: center;
+        
+                    }
+                    
+                    
+
+                    
+
+                }
+            }
+            .grandTotalContainer {
+                width: 30%;
+                display: flex;
+                flex-direction: row;
+                align-content: space-between;;
+                
+            }
+        }
+
+    }
+    
+
+        
+        
+
+}
