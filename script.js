@@ -1,193 +1,143 @@
-/*--selecting the carts so as to make it functional--*/
-
-let carts = document.querySelectorAll('.add-cart')
-
-/*--An array for the product so as to be able to record it features--*/
-/*--This is more like a record store--*/
-let products = [
-    {
-        name: "Fried Rice",
-        tag: "friedrice",
-        price: 2000,
-        inCart: 0
-        
-    },
-    {
-        name: "Eba",
-        tag: "swallow",
-        price: 500,
-        inCart: 0
-    },
-    {
-        name: "Pounded Yam",
-        tag: "poundedyam",
-        price: 1000,
-        inCart: 0
-    },
-    {
-        name: "Fish Sauce",
-        tag: "fishsauce",
-        price: 500,
-        inCart: 0
-    },
-    {
-        name: "Rice and Beans",
-        tag: "riceandbeans",
-        price: 1000,
-        inCart: 0
-    },
-    {
-        name: "Beans and plantain",
-        tag: "beansandplantain",
-        price: 800,
-        inCart: 0
-    },
-    {
-        name: "Jollof Rice",
-        tag: "jollofrice",
-        price: 2000,
-        inCart: 0
-    },
-    {
-        name: "Porridge",
-        tag: "porridge",
-        price: 900,
-        inCart: 0
-    },
-];
-
-/*---function to fix an event listener to the the button--*/
-/*--it loops through the selected carts and adds a listener to them all-*/
-for (let i = 0; i < carts.length; i++) {
-    carts[i].addEventListener('click', () => {
-        cartNumbers(products[i]);
-        totalCost(products[i]);
-    })
-}
-
-function onloadCartNumbers() {
-    let productNumbers = localStorage.getItem('cartNumber')
-    
-    if (productNumbers) {
-        document.querySelector(".cart-btn span").textContent = productNumbers ;
-    }
-
-    
-}
-
-/*--function to use the local storage. It stores in the local storage
-and also updates for addition product 
-it then updates the number on the 'cart' menu bar. --*/
-function cartNumbers(product) {
-    let productNumbers = localStorage.getItem('cartNumber')
-    productNumbers = parseInt(productNumbers)
-    
-    if(productNumbers) {
-        localStorage.setItem('cartNumber', productNumbers + 1)
-        document.querySelector(".cart-btn span").textContent = productNumbers + 1
-    } else{
-        localStorage.setItem('cartNumber', 1)
-        document.querySelector(".cart-btn span").textContent = 1
-    }
-    setItems(product);
-}
-
-/*--function to create the product xtics which is in an object format then 
-we use JSON to make it readeable after which the incart att is updated to show how many times a particular product
-was selected--*/
-function setItems(product) {
-    
-    let cartItems = localStorage.getItem("productsInCart");
-    cartItems = JSON.parse(cartItems)
-
-    if(cartItems != null){
-        if(cartItems[product.tag] == undefined) {
-            cartItems = {
-                ...cartItems,
-                [product.tag]:product
-            }
-        }
-
-        cartItems[product.tag].inCart += 1;
-    }else {
-        product.inCart = 1;
-        cartItems = {
-            [product.tag]:product
-        }
-    }
-
-    localStorage.setItem("productsInCart", JSON.stringify
-    (cartItems));
-}
-function totalCost(product) {
-    console.log(product, "clicked");
-    
-    let cartCost = localStorage.getItem('totalCost')
-    
-
-    if (cartCost!=null) {
-        cartCost = parseInt(cartCost);
-        localStorage.setItem("totalCost", cartCost+ product.price)
-
-
-    } else {
-        localStorage.setItem("totalCost",product.price)
-    }
-
-    
-}
-
-function displayCart() {
-    let cartItems = localStorage.getItem("productsInCart");
-    cartItems = JSON.parse(cartItems);
-    let productContainer = document.querySelector
-    (".products");
-    let cartCost = localStorage.getItem('totalCost')
-    
-    
-    if (cartItems && productContainer) {
-        productContainer.innerHTMl ='';
-        Object.values(cartItems).map(item => {
-            productContainer.innerHTML += `
-        
-                <div class= "product">
-                    <div>
-                        <button><ion-icon name ="close-circle"></ion-icon></button>
-                        <img src="../img/food1.jpg" alt="img" width = 100 height = 90 ></img>
-                        <span>${item.name}</span>
-
-                    </div>
-                    
-                    <div class = "price">${item.price}</div>
-                    <div class = "quantity">
-                        <span>${item.inCart}</span>
-                    </div>
-                    <div class ="total">
-                        #${item.inCart * item.price}.00
-                    </div>
-            
-                </div>
-
-            `;
-            
+function Run (){
+    this.carts = document.querySelectorAll('.add-cart')
+    for (let i=0 ; i < carts.length; i++) {
+        let cart = this.carts[i];
+        cart.addEventListener('click',() => {
+            console.log('clicked')
         });
+    };
 
-        productContainer.innerHTML += `
-            <div class = "grandTotalContainer">
-                <h4 class = "grandTotalTitle">
-                    Grand Total
-                </h4>
-                <h4 class ="grandTotal">
-                    $${cartCost}.00
-                </h4>
-            </div>
+    this.quantityOfItems = document.getElementsByClassName ("product-quantity-input")
+    for (let i = 0; i< quantityOfItems.length; i++) {
+        let inputs = this.quantityOfItems[i];
+        inputs.addEventListener('change', quantityChanged)
+      
+         
+    }
+
+    this.addToCarts = document.getElementsByClassName ('add-cart')
+    for  (let i = 0; i< addToCarts.length; i++) {
+        let addToCart = this.addToCarts[i];
+        addToCart.addEventListener('click', addToCartClicked)
+    }
         
-        `
+
+}
+
+function addToCartClicked (event) {
+    let cartAddition = event.target
+    let foodItems = cartAddition.parentElement.parentElement ;
+    let productImage = foodItems.getElementsByClassName('product-image')[0].src;
+    let productTitle = foodItems.getElementsByClassName('product-title')[0].innerText;
+    let productPrice = parseFloat(foodItems.getElementsByClassName('product-price')[0].innerText.replace('#',''));
+    let kgPerPrice = parseFloat(foodItems.getElementsByClassName('product-kg')[0].innerText.replace('kg',''));
+    let productQuantity = parseFloat (foodItems.getElementsByClassName('product-quantity-input')[0].value);
+
+    
+    shippingPrice = (kgPerPrice * 1000 * productQuantity)
+
+    console.log(productQuantity, productTitle,productPrice, productImage, shippingPrice);
+    AddedToCart(productImage, productTitle, productPrice, productQuantity, shippingPrice, kgPerPrice);
+    
+    RemoveItem()
+    updateCartTotal()
+    
+    
+    
+}
+
+function AddedToCart(productImage,productTitle,productPrice, productQuantity, shippingPrice, kgPerPrice){
+    this.cartRow = document.createElement('div');
+    cartRow.classList.add('cart-row');
+    this.cartItems = document.getElementsByClassName('cart-items')[0];
+    this.cartItemsName = this.cartItems.getElementsByClassName('cart-item-title');
+    console.log( this.cartItemsName ,",", this.productTitle);
+
+    for (let i= 0 ; i < cartItemsName.length; i++){
+        if (cartItemsName[i].innerText == productTitle ) {
+            alert('This item has already been added to the cart.')
+            return
+        };
+    };
+    
+    this.cartRowContents = `
+        
+
+        <div class= "cart-product-image"> <img src="${productImage}" width = 100 height = 90 ></img> <br>
+            <span class ="cart-item-title">${productTitle}</span>
+        </div> 
+        <div class= "cart-product-price"> <div > ${productPrice}</div> 
+        </div>
+        <div class = "cart-product-quantity"> <input class = "product-quantity-input" type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="${productQuantity}" value="${productQuantity}" >  <br>
+            </td>
+        </div>
+        <div class = "cart-product-kg"> ${kgPerPrice}kg </div>
+        <div class = "cart-shipping-fee" >  ${shippingPrice}</div>
+        
+        <div > <button class= "remove-btn"><ion-icon name ="close-circle"></ion-icon></button> </div>
+    
+
+    `
+    this.cartRow.innerHTML = this.cartRowContents;
+    this.cartItems.append(cartRow);
+    console.log('LOOK AT ', this.cartItems)
+    
+    
+  
+}
+
+
+function quantityChanged (event) {
+    let inputs = event.target
+    if (isNaN(inputs.value) || inputs.value <= 0) {
+        inputs.value = 1
+    } 
+    updateCartTotal()
+}
+
+function RemoveItem () {
+    this.removeBtn = document.getElementsByClassName('remove-btn')
+    for (let i=0 ; i < removeBtn.length; i++) {
+        this.removeBtns = this.removeBtn[i];
+        this.removeBtns.addEventListener('click',(event) => {
+            let removeClicked = event.target
+            removeClicked.parentElement.parentElement.parentElememnt.remove()   
+
+            updateCartTotal ();
+
+        });
     }
 }
-function deleteItem(){
 
-}
 
-onloadCartNumbers();
-displayCart();
+function updateCartTotal () {
+   
+    var cartItemContainer = document.getElementsByClassName("cart-items")[0]
+    var cartRow = cartItemContainer.getElementsByClassName("cart-row")
+    console.log(cartRow)
+    let total = 0
+    let totalProduct = 0
+    
+    for (let i=0 ; i < cartRow.length; i++) {
+        var cartRows = cartRow[i]
+        var priceOfItem = cartRows.getElementsByClassName ("cart-product-price")[0]
+        var priceOfShipping = cartRows.getElementsByClassName ("cart-shipping-fee")[0]
+        var quantityOfItem = cartRows.getElementsByClassName ("product-quantity-input")[0]
+
+        var shippingPrice = parseFloat(priceOfShipping.innerText.replace('#', ''))
+        var productPrice = parseFloat(priceOfItem.innerText)
+        var productQuantity = parseFloat(quantityOfItem.value)
+
+        total = total + ((productPrice*productQuantity) + shippingPrice)
+        totalProduct = totalProduct +productQuantity
+        console.log ( priceOfItem , priceOfShipping , quantityOfItem)
+        console.log(shippingPrice, productPrice, productQuantity , total)
+        console.log(totalProduct)
+    }
+    document.getElementsByClassName('grandTotal')[0].innerText = " # "+ total
+    document.getElementsByClassName('cart-amount')[0].innerText = totalProduct
+    Run()
+};
+
+RemoveItem ();
+Run();

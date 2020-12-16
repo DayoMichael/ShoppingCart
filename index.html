@@ -18,7 +18,7 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Products</a></li>
-                    <li ><a class = "cart-btn" href="#cart"><ion-icon name="cart-outline"></ion-icon>Cart - <span> 0</span></a></li>
+                    <li ><a class = "cart-btn" href="#cart"><ion-icon name="cart-outline"></ion-icon>Cart - <span class = "cart-amount">  0</span></a></li>
                 </ul>
             </div>
         </div>
@@ -31,41 +31,89 @@
         <div class = "food-items">
             
             <div class = "food-item">
-                <img src="../img/food1.jpg" alt="img">
-                <h3>Fried-Rice</h3>
-                <h5>#2000</h3>
-                <input type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity"> <br>
-
-                <h5> <a class = "add-cart cart1" href="#">Add to Cart</a></h5>
+                <img class=  "product-image" src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title">Fried-Rice</h3>
+                <h5 class = "product-price">#2000</h5>
+                <h5 class = "product-kg">1kg</h5>
+                <input class = "product-quantity-input"type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1"> <br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button> </h5>
                 
             </div>
 
             <div class = "food-item">
-                <img src="../img/food1.jpg" alt="img">
-                <h3>Eba</h3>
-                <h5>#500</h3>
-                <input type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity"> <br>
-                <h5> <a class = "add-cart cart1" href="#">Add to Cart</a></h5>
-                
-                
-            </div>
-
-            <div class = "food-item">
-                <img src="../img/food1.jpg" alt="img">
-                <h3>Pounded Yam</h3>
-                <h5>#1000</h3>
-                <input type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity"> <br>
-                <h5> <a class = "add-cart cart1" href="#">Add to Cart</a></h5>
+                <img class = "product-image"src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title">Eba</h3>
+                <h5 class = "product-price">#500</h3>
+                    <h5 class = "product-kg">2kg</h5>
+                <input class = "product-quantity-input"type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1"> <br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button> </h5>
                 
                 
             </div>
 
             <div class = "food-item">
-                <img src="../img/food1.jpg" alt="img">
-                <h3>Fish Sauce</h3>
-                <h5>#500</h3>
-                <input type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity"> <br>
-                <h5> <a class = "add-cart cart1" href="#">Add to Cart</a></h5>
+                <img class = "product-image" src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title">Pounded Yam</h3>
+                <h5 class = "product-price">#1000</h3>
+                <h5 class = "product-kg">2.5kg</h5>
+                <input class = "product-quantity-input"type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1"> <br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button> </h5>
+                
+                
+            </div>
+
+            <div class = "food-item">
+                <img class =  "product-image"  src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title">Fish Sauce</h3>
+                <h5 class = "product-price">#500</h3>
+                    <h5 class = "product-kg">1kg</h5>
+                <input class = "product-quantity-input"type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1"> <br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button> </h5>
+                
+            </div>
+        </div>
+
+        <div class="item-title">
+            <h2> MO's SNACKS</h2>
+        </div>
+
+        <div class = "food-items">
+            <div class = "food-item">
+                <img class = "product-image" src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title" >Doughnut</h3>
+                <h5 class = "product-price">#500</h3>
+                <h5 class = "product-kg">0kg</h5>
+                <input class= "product-quantity-input" type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1"> <br><br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button></h5>
+            </div>
+
+            <div class = "food-item">
+                <img class = "product-image" src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title" >sausage</h3>
+                <h5 class ="product-price" >#400</h3>
+                <h5 class = "product-kg">0kg</h5>
+                <input class= "product-quantity-input" type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1" > <br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button> </h5>
+                
+            </div>
+
+            <div class = "food-item">
+                <img class = "product-image" src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title">MeatPie</h3>
+                <h5 class = "product-price">#500</h3>
+                <h5 class = "product-kg">0kg</h5>
+                <input class= "product-quantity-input" type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1" > <br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button></h5>
+                
+            </div>
+
+            <div class = "food-item">
+                <img class ="product-image"src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title">ChickenPie</h3>
+                <h5 class = "product-price">#900</h3>
+                <h5 class = "product-kg">0kg</h5>
+                <input class= "product-quantity-input" type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1"> <br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button></h5>
                 
             </div>
         </div>
@@ -73,68 +121,97 @@
         <div class="item-title">
             <h2> MO's Drinks</h2>
         </div>
-
+    
         <div class = "food-items">
             <div class = "food-item">
-                <img src="../img/food1.jpg" alt="img">
-                <h3>Rice and Beans</h3>
-                <h5>#1000</h3>
-                <input type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity"> <br><br>
+                <img class = "product-image" src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title" >Malt</h3>
+                <h5 class = "product-price">#150</h3>
+                <h5 class = "product-kg">0.5kg</h5>
+                <input class= "product-quantity-input" type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1"> <br>
                 
-                <h5> <a class = "add-cart cart1" href="#">Add to Cart</a></h5>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button></h5>
             </div>
 
             <div class = "food-item">
-                <img src="../img/food1.jpg" alt="img">
-                <h3>Beans and Plantain</h3>
-                <h5>#800</h3>
-                <input type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity"> <br>
-                <h5> <a class = "add-cart cart1" href="#">Add to Cart</a></h5>
-                
-            </div>
-
-            <div class = "food-item">
-                <img src="../img/food1.jpg" alt="img">
-                <h3>Jollof-Rice</h3>
-                <h5>#2000</h3>
-                <input type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity"> <br>
-                <h5> <a class = "add-cart cart1" href="#">Add to Cart</a></h5>
+                <img class = "product-image" src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title" >sprite</h3>
+                <h5 class ="product-price" >#100</h3>
+                <h5 class = "product-kg">0.2kg</h5>
+                <input class= "product-quantity-input" type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1" > <br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button> </h5>
                 
             </div>
 
             <div class = "food-item">
-                <img src="../img/food1.jpg" alt="img">
-                <h3>Yam-porridge</h3>
-                <h5>#900</h3>
-                <input type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity"> <br>
-                <h5> <a class = "add-cart cart1" href="#">Add to Cart</a></h5>
+                <img class = "product-image" src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title">Fanta</h3>
+                <h5 class = "product-price">#100</h3>
+                <h5 class = "product-kg">0.3kg</h5>
+                <input class= "product-quantity-input" type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1" > <br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button></h5>
+                
+            </div>
+
+            <div class = "food-item">
+                <img class ="product-image"src="../img/food1.jpg" alt="img">
+                <h3 class = "product-title">coke</h3>
+                <h5 class = "product-price">#100</h3>
+                <h5 class = "product-kg">0.3kg</h5>
+                <input class= "product-quantity-input" type="number" id="quntity" name="quntity" style = "width: 65px" placeholder="Quantity" value="1"> <br>
+                <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button> </h5>
                 
             </div>
         </div>
+        
     </section>
     <!------Cart------>
     <section id= "cart"> 
+        <h2>
+            CART
+        </h2>
         <div class="product-container">
 
-            <div class="item-title">
-                <h2> CART</h2>
+            
+
+            <div >
+                <table style= "width:95% ">
+                    <div class="product-header">
+                        <h5 class="product-title">PRODUCT</h5>
+                        <h5 class="price">PRICE</h5>
+                        <h5 class="quantity">QUANTITY</h5>
+                        <h5 class="product-weight">WEIGHT</h5>
+                        <h5 class = "shippingfee"> SHIPPING-FEE</h5>
+                        
+            
+                    </div>
+
+                    
+                    
+                    <div class= "cart-items ">
+                        
+                    </div>
+                    
+                    
+                </table>
+
+                <div class = "grandTotalContainer">
+                    <h4 class = "grandTotalTitle">
+                        Grand Total     -  
+                    </h4>
+                    <h4 class ="grandTotal">
+                              #1000
+                    </h4>
+                </div>
             </div>
 
-            <div class="product-header">
-                <h5 class="product-title">PRODUCT</h5>
-                <h5 class="price">PRICE</h5> 
-                <h5 class="quantity">QUANTITY</h5> 
-                <h5 class="total">TOTAL</h5> 
+            
 
-            </div>
-            <div class = "products">
-
-            </div>
 
 
         </div>
     </section>
- <!----------- <script src="script.js"></script> --->
+    <script src="script.js"></script>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 </body>
 </html>

@@ -102,8 +102,8 @@ body {
         justify-content: center;
         .item-title{
             display: block;
-            padding: 30px;
-            margin: 30px;
+            padding-top: 30px;
+            margin-top: 30px;
         }
         .food-items {
            display: flex;
@@ -124,6 +124,11 @@ body {
                    margin: 0;
                    a {
                        text-decoration: none;
+                       color:white;
+                       background-color: black;
+                       margin:5px,0px;
+                       border-top: 5px;
+                       border-radius: 5%;
                    }
                }
 
@@ -132,14 +137,22 @@ body {
     } 
     /*--cart page--*/
     #cart {
+        
         .product-container {
             max-width: 95%;
             justify-content: space-around;
             margin: 0 auto;
             margin-top: 150px;
-          
-            
             align-items: center;
+            .items-tite{
+                display: flex;
+                padding: 30px;
+                margin: 30px;
+                align-items: center;
+                text-align: center;
+            }
+
+            
             
             .ion-icon {
                 font-size: 25px;
@@ -206,11 +219,14 @@ body {
                     align-items: flex-start;
                     justify-content: space-between;
                     border-bottom: 1px solid lightgray;  
+                    padding-top: 10px;
+                    padding-bottom: 10px;
 
                     .cart-product-image{
                         width: 30%;
                         display: flex;
                         flex-direction: row;
+                        
                         .cart-item-title{
                             padding: 20px;
                         }
