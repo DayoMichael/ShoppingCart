@@ -74,7 +74,7 @@ function AddedToCart(productImage,productTitle,productPrice, productQuantity, sh
         <div class = "cart-product-kg"> ${kgPerPrice}kg </div>
         <div class = "cart-shipping-fee" >  ${shippingPrice}</div>
         
-        <div > <button type ="button" ><ion-icon name ="close-circle" class= "remove-btn"></ion-icon></button> </div>
+        <div > <ion-icon name ="close-circle" class= "remove-btn"></ion-icon></div>
     
 
     `
@@ -101,7 +101,7 @@ function RemoveItem () {
         let removeBtns = this.removeBtn[i];
         removeBtns.addEventListener('click',(event) => {
             let removeClicked = event.target
-            removeClicked.parentElement.parentElement.parentElement.remove()   
+            removeClicked.parentElement.parentElement.remove()   
 
             updateCartTotal ();
 
