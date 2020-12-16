@@ -34,7 +34,7 @@ function addToCartClicked (event) {
     let productQuantity = parseFloat (foodItems.getElementsByClassName('product-quantity-input')[0].value);
 
     
-    shippingPrice = (kgPerPrice * 1000 * productQuantity)
+    shippingPrice = (kgPerPrice * 1000 )
 
     console.log(productQuantity, productTitle,productPrice, productImage, shippingPrice);
     AddedToCart(productImage, productTitle, productPrice, productQuantity, shippingPrice, kgPerPrice);
