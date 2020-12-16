@@ -153,6 +153,7 @@ body #Product .food-items {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 100px;
 }
 
 body #Product .food-items .food-item {
@@ -189,15 +190,11 @@ body #cart .product-container {
           align-items: center;
 }
 
-body #cart .product-container .items-tite {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 30px;
-  margin: 30px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+body #cart .product-container .item-title {
+  display: block;
+  padding-top: 10px;
+  border-top: 10px;
+  margin-top: 10px;
   text-align: center;
 }
 
