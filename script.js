@@ -98,10 +98,10 @@ function quantityChanged (event) {
 function RemoveItem () {
     this.removeBtn = document.getElementsByClassName('remove-btn')
     for (let i=0 ; i < removeBtn.length; i++) {
-        this.removeBtns = this.removeBtn[i];
-        this.removeBtns.addEventListener('click',(event) => {
+        let removeBtns = this.removeBtn[i];
+        removeBtns.addEventListener('click',(event) => {
             let removeClicked = event.target
-            removeClicked.parentElement.parentElement.parentElememnt.remove()   
+            removeClicked.parentElement.parentElement.parentElement.remove()   
 
             updateCartTotal ();
 
