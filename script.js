@@ -74,7 +74,7 @@ function AddedToCart(productImage,productTitle,productPrice, productQuantity, sh
         <div class = "cart-product-kg"> ${kgPerPrice}kg </div>
         <div class = "cart-shipping-fee" >  ${shippingPrice}</div>
         
-        <div > <button class= "remove-btn"><ion-icon name ="close-circle"></ion-icon></button> </div>
+        <div > <button type ="button" ><ion-icon name ="close-circle" class= "remove-btn"></ion-icon></button> </div>
     
 
     `
