@@ -1,11 +1,5 @@
 function Run (){
-    this.carts = document.querySelectorAll('.add-cart')
-    for (let i=0 ; i < carts.length; i++) {
-        let cart = this.carts[i];
-        cart.addEventListener('click',() => {
-            console.log('clicked')
-        });
-    };
+
 
     this.quantityOfItems = document.getElementsByClassName ("product-quantity-input")
     for (let i = 0; i< quantityOfItems.length; i++) {
