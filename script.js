@@ -74,7 +74,7 @@ function AddedToCart(productImage,productTitle,productPrice, productQuantity, sh
     `
     this.cartRow.innerHTML = this.cartRowContents;
     this.cartItems.append(cartRow);
-    console.log('LOOK AT ', this.cartItems)
+    
     
     
   
