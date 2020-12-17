@@ -1,22 +1,18 @@
 function Run (){
-
-
-    this.quantityOfItems = document.getElementsByClassName ("product-quantity-input")
-    for (let i = 0; i< quantityOfItems.length; i++) {
-        let inputs = this.quantityOfItems[i];
-        inputs.addEventListener('change', quantityChanged)
-      
-         
-    }
-
-    this.addToCarts = document.getElementsByClassName ('add-cart')
+    this.addToCarts = document.getElementsByClassName ('add-cart');
     for  (let i = 0; i< addToCarts.length; i++) {
         let addToCart = this.addToCarts[i];
-        addToCart.addEventListener('click', addToCartClicked)
-    }
-        
+        addToCart.addEventListener('click', addToCartClicked);
+    };
 
-}
+    this.quantityOfItems = document.getElementsByClassName ("product-quantity-input");
+    for (let i = 0; i< quantityOfItems.length; i++) {
+        let inputs = this.quantityOfItems[i];
+        inputs.addEventListener('change', quantityChanged);
+      
+         
+    };
+};
 
 function addToCartClicked (event) {
     let cartAddition = event.target
@@ -28,16 +24,13 @@ function addToCartClicked (event) {
     let productQuantity = parseFloat (foodItems.getElementsByClassName('product-quantity-input')[0].value);
 
     
-    shippingPrice = (kgPerPrice * 1000 )
+    shippingPrice = (kgPerPrice * 1000 );
 
     console.log(productQuantity, productTitle,productPrice, productImage, shippingPrice);
     AddedToCart(productImage, productTitle, productPrice, productQuantity, shippingPrice, kgPerPrice);
     
-    RemoveItem()
-    updateCartTotal()
-    
-    
-    
+    RemoveItem();
+    updateCartTotal(); 
 }
 
 function AddedToCart(productImage,productTitle,productPrice, productQuantity, shippingPrice, kgPerPrice){
@@ -74,12 +67,7 @@ function AddedToCart(productImage,productTitle,productPrice, productQuantity, sh
     `
     this.cartRow.innerHTML = this.cartRowContents;
     this.cartItems.append(cartRow);
-    
-    
-    
-  
-}
-
+};
 
 function quantityChanged (event) {
     let inputs = event.target
@@ -100,8 +88,8 @@ function RemoveItem () {
             updateCartTotal ();
 
         });
-    }
-}
+    };
+};
 
 
 function updateCartTotal () {
@@ -127,7 +115,7 @@ function updateCartTotal () {
         console.log ( priceOfItem , priceOfShipping , quantityOfItem)
         console.log(shippingPrice, productPrice, productQuantity , total)
         console.log(totalProduct)
-    }
+    };
     document.getElementsByClassName('grandTotal')[0].innerText = " # "+ total
     document.getElementsByClassName('cart-amount')[0].innerText = totalProduct
     Run()
