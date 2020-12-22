@@ -42,16 +42,16 @@ function AddedToCart(productImage,productTitle,productPrice, productQuantity, sh
 
     for (let i= 0 ; i < cartItemsName.length; i++){
         if (cartItemsName[i].innerText == productTitle ) {
-            alert('This item has already been added to the cart.')
+            alert('This item has already been added to the cart before.')
             return
         };
     };
-    
+    alert ( productTitle + ' added')
     this.cartRowContents = `
         
 
         <div class= "cart-product-image"> <img src="${productImage}" width = 100 height = 90 ></img> <br>
-            <span class ="cart-item-title">${productTitle}</span>
+        <span class ="cart-item-title">${productTitle}</span>
         </div> 
         <div class= "cart-product-price"> <div > ${productPrice}</div> 
         </div>
@@ -60,7 +60,7 @@ function AddedToCart(productImage,productTitle,productPrice, productQuantity, sh
         </div>
         <div class = "cart-product-kg"> ${kgPerPrice}kg </div>
         <div class = "cart-shipping-fee" >  ${shippingPrice}</div>
-        
+
         <div > <ion-icon name ="close-circle" class= "remove-btn"></ion-icon></div>
     
 
