@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <section id = "header">
+        <div class = "header nav-bar" >
+            <div class ="brand-name">
+                <a href="#"> <h1> MO'S DELIGHT</h1></a>
+                <p>Let's help you sort your kitchen, while you go have fun.</p>
+            </div>
+            <div class = "nav-list">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li ><a class = "cart-btn" href="#cart"><ion-icon name="cart-outline"></ion-icon>Cart - <span class = "cart-amount">  0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!----------Product Menu-------->
+    <section id="Product">
+        <div class="item-title">
+            <h2> MO's Dishes</h2>
+        </div>
+        <div class = "food-items Food">
+            
+
+        </div>
+
+        <div class="item-title">
+            <h2> MO's SNACKS</h2>
+        </div>
+
+        <div class = "food-items Snacks">
+            
+        </div>
+
+        <div class="item-title">
+            <h2> MO's Drinks</h2>
+        </div>
+    
+        <div class = "food-items Drinks">
+           
+        </div>
+        
+    </section>
+    <!------Cart------>
+
+    <section id= "cart"> 
+        
+        <div class="product-container">
+
+            
+
+            <div >
+                <div class="item-title">
+                    <h2>CART</h2>
+                </div>
+                <table style= "width:95% ">
+                    <div class="product-header">
+                        <h5 class="product-title">PRODUCT</h5>
+                        <h5 class="price">PRICE</h5>
+                        <h5 class="quantity">QUANTITY</h5>
+                        <h5 class="product-weight">WEIGHT</h5>
+                        <h5 class = "shippingfee"> SHIPPING-FEE</h5>
+                        
+            
+                    </div>
+
+                    
+                    
+                    <div class= "cart-items">
+
+                    
+                        
+                    </div>
+                    
+                    
+                </table>
+
+                <div class = "grandTotalContainer">
+                    <h4 class = "grandTotalTitle">
+                        Grand Total     -  
+                    </h4>
+                    <h4 class ="grandTotal">
+                              #0.00
+                    </h4>
+                </div>
+            </div>
+
+            
+
+
+
+        </div>
+    </section>
+    <script src="new.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+</body>
+</html>
