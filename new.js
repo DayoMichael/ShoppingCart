@@ -45,15 +45,18 @@ class Cart {
     }
   // to remove from the cart session
   removeFromCart (product, productPos) {
-     product.remove()
+     product.parentElement.remove()
      this.productInCart.splice(productPos, 1)
      console.log(this.productInCart)
     }
   // to get the total amount from
-  getCartTotal () {
+  getCartTotal (total) {
+    document.getElementsByClassName('grandTotal')[0].innerText = " # "+ total
   	
   }
-
+  getQuantityTotal (totalQty){
+    document.getElementsByClassName('cart-amount')[0].innerText = totalQty
+   }
 }
 
 //
@@ -141,9 +144,6 @@ cartItems.innerHTML = ''
 function added () {
 cart.productInCart.forEach(product => {
         let cartRow = document.createElement('div')
-        let cartItems = document.getElementsByClassName('cart-items')[0]
-        cartItemsName = cartItems.getElementsByClassName('cart-item-title');
-        cartItems.innerHTML = ''
         console.log(cart.productInCart)
         cartRow.classList.add('cart-row',  product.id)
         for (let i= 0 ; i < cartItemsName.length; i++){
@@ -216,6 +216,8 @@ function removeItem () {
         removeFromCarts.addEventListener('click', removeFromCartClicked);
         console.log('remove clicked')
     };
+    
+    
 }
 //function to pass the event listener into other functions
 function removeFromCartClicked(event){
@@ -263,18 +265,22 @@ function quantityChanged (event) {
 //function to get the total price
 function totalPrice(){
     var total = 0
+
     cart.productInCart.forEach(product => {
         return total += product.totalPrice
 
     })
-    document.getElementsByClassName('grandTotal')[0].innerText = " # "+ total
+    cart.getCartTotal(total)
+    
 }
 //function to get the total quantity in the cart
 function totalQuantity(){
     var totalQty = 0
+
     cart.productInCart.forEach(product => {
         return totalQty += parseFloat(product.qty)
 
     })
-    document.getElementsByClassName('cart-amount')[0].innerText = totalQty
+    cart.getQuantityTotal (totalQty)
+
 }
