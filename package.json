@@ -1,0 +1,28 @@
+{
+  "name": "shopcart",
+  "version": "1.0.0",
+  "description": "A shopping cart project",
+  "private": true,
+  "main": "new.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DayoMichael/ShoppingCart.git"
+  },
+  "author": "DayoMichael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DayoMichael/ShoppingCart/issues"
+  },
+  "homepage": "https://github.com/DayoMichael/ShoppingCart#readme",
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  }
+}

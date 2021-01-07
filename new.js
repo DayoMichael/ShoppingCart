@@ -87,12 +87,12 @@ products.forEach(product => {
         
         <div class = "cart-row  ${product.id}"  >
             <img class = "product-image" src="${product.img}" alt="img">
-            <h3 class = "product-title" >${product.title}</h3>
+            <h3 class = " is-size-3 has-text-warning product-title " >${product.title}</h3>
             <h5 class = "product-price">#${product.price}</h3>
             <h5 class = "product-kg">${product.weight}kg</h5>
-            <input class= "product-quantity-input" type="number" id="quantity" name="qauntity" style = "width: 65px" placeholder="Quantity" value="${product.qty}"> <br>
+            <input class= " input product-quantity-input " type="number" id="quantity" name="qauntity" style = "width: 65px" placeholder="Quantity" value="${product.qty}"> <br>
             
-            <h5> <button class = "add-cart cart1" href="#" type ='button'>Add to Cart</button></h5>
+            <h5> <button class = "button is-primary add-cart cart1" href="#" type ='button'>Add to Cart</button></h5>
         </div>
         
     `
@@ -215,10 +215,9 @@ function removeItem () {
         let removeFromCarts = removeFromCart[i];
         removeFromCarts.addEventListener('click', removeFromCartClicked);
         console.log('remove clicked')
-    };
-    
-    
+    };  
 }
+
 //function to pass the event listener into other functions
 function removeFromCartClicked(event){
     let productRemovedFromCart = getProduct(event)
@@ -228,6 +227,7 @@ function removeFromCartClicked(event){
     totalPrice()
     totalQuantity()
 }
+
 //function to get the index of a product clicked in the array
 function removeFromArray(product, productId){
     let productPosition = cart.productInCart.find(product => {
@@ -238,6 +238,7 @@ function removeFromArray(product, productId){
 
 
 }
+
 // function to listen to quantity change
 function quantityChange(){
     quantityOfItems = document.getElementsByClassName ("product-quantity-input");
@@ -250,6 +251,7 @@ function quantityChange(){
     totalPrice()
     totalQuantity()
 }
+
 // function to get what the input has been changed to and assign it to the quantity of that particular item in the array.
 function quantityChanged (event) {
     let inputs = event.target
@@ -260,7 +262,7 @@ function quantityChanged (event) {
     console.log(this.value)
     outcome[0].qty= this.value
     console.log(outcome[0].qty)
-    
+
 }
 //function to get the total price
 function totalPrice(){
