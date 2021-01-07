@@ -3,18 +3,21 @@ import { Food } from './fooditem.js'
 import { quantityChange } from './app.js'
 
 
-let product1 = new Food("Fried-Rice", 2000, "Food", 1 , 1, "../img/food1.jpg")
-let product2 = new Food("Eba", 500, "Food", 2, 1, "../img/food1.jpg")
-let product3 = new Food("pounded-Yam", 1000, "Food", 2.5, 1, "../img/food1.jpg")
-let product4 = new Food("Fish-Sauce", 500, "Food", 1, 1, "../img/food1.jpg")
-let product5 = new Food("Doughnut", 500, "Snacks", 0, 1, "../img/food1.jpg")
-let product6 = new Food("Sausage", 400, "Snacks", 0 , 1, "../img/food1.jpg")
-let product7 = new Food("Meat-Pie", 500, "Snacks", 0, 1, "../img/food1.jpg")
-let product8 = new Food("Chicken-Pie", 900, "Snacks", 0, 1, "../img/food1.jpg")
-let product9 = new Food("Malt", 100, "Drinks", 0.2, 1, "../img/food1.jpg")
-let product10 = new Food("Sprit", 100 , "Drinks", 0.2, 1, "../img/food1.jpg")
-let product11 = new Food("Fanta", 100, "Drinks", 0.3, 1, "../img/food1.jpg")
-let product12 = new Food("Coke", 100 , "Drinks", 0.3, 1, "../img/food1.jpg")
+let product1 = new Food("Fried-Rice", 2000, "Food", 1 , 1, "./src/img/food1.jpg")
+let product2 = new Food("Eba", 500, "Food", 2, 1, "./src/img/food1.jpg")
+let product3 = new Food("pounded-Yam", 1000, "Food", 2.5, 1, "./src/img/food1.jpg")
+let product4 = new Food("Fish-Sauce", 500, "Food", 1, 1, "./src/img/food1.jpg")
+let product5 = new Food("Doughnut", 500, "Snacks", 0, 1, "./src/img/food1.jpg")
+let product6 = new Food("Sausage", 400, "Snacks", 0 , 1, "./src/img/food1.jpg")
+let product7 = new Food("Meat-Pie", 500, "Snacks", 0, 1, "./src/img/food1.jpg")
+let product8 = new Food("Chicken-Pie", 900, "Snacks", 0, 1, "./src/img/food1.jpg")
+let product9 = new Food("Malt", 100, "Drinks", 0.2, 1, "./src/img/food1.jpg")
+let product10 = new Food("Sprit", 100 , "Drinks", 0.2, 1, "./src/img/food1.jpg")
+let product11 = new Food("Fanta", 100, "Drinks", 0.3, 1, "./src/img/food1.jpg")
+let product12 = new Food("Coke", 100 , "Drinks", 0.3, 1, "./src/img/food1.jpg")
+
+
+// src\img\beansandplantain.jpg
 
 let products = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12]
 
