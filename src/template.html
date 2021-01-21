@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="727773259601-oh8iue1hmi4qed0vv7ear69jd2lrrhgu.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
     <!--<link rel="stylesheet" href="styles.css">-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
@@ -21,9 +23,30 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Products</a></li>
                     <li ><a class = "cart-btn" href="#cart"><ion-icon name="cart-outline"></ion-icon>Cart - <span class = "cart-amount">  0</span></a></li>
+                    <li class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></li>
+                    
+                        
+                    
+                    <a  href="#" onclick="signOut();">Sign out</a>
+                        <script>
+                            function signOut() {
+                                var auth2 = gapi.auth2.getAuthInstance();
+                                auth2.signOut().then(function () {
+                                console.log('User signed out.');
+                                });
+                                localStorage.removeItem('Token');
+                            }
+                        </script>
                 </ul>
+                
             </nav>
+            
         </div>
+            
+            
+  
+        </div>
+        
     </section>
     <!----------Product Menu-------->
     <section id="Product">
@@ -102,7 +125,7 @@
 
         </div>
     </section>
-    
+    <script src= "./src/signin.js"></script>
     
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 </body>

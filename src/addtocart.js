@@ -52,7 +52,7 @@ cart.productInCart.forEach(product => {
             </div> 
             <div class= " container cart-product-price  "> <div class = "input mx-2 my-2 is-focused is-warning columns has-background-warning-light  is-centered" > ${product.price}</div> 
             </div>
-            <div class = " input mx-2 my-2 is-focused is-dark cart-product-quantity container has-background-grey-light "> <span><input class = " input mx-2 is-focused is-dark columns has-background-grey-light is-centered product-quantity-input" type="number" id="quntity" 
+            <div class = " input mx-2 my-2 is-focused is-dark cart-product-quantity container has-background-grey-light "> <span><input class = " input product-quantity-input  mx-2 is-focused is-dark columns has-background-grey-light is-centered  " type="number" id="quntity" 
             name="quntity" style = "width: 65px" placeholder="${product.qty}" value="${product.qty}" > </span> <br>
             </div>
             <div class = " input mx-2 my-2 is-focused is-link has-background-link-light columns is-centered mx-2 cart-product-kg"> ${product.weight}kg </div>

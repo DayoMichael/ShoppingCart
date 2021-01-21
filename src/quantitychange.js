@@ -9,6 +9,7 @@ export function quantityChanged (event) {
     let outcome = getProduct(event)
     console.log(this.value)
     outcome[0].qty= this.value
-    console.log(outcome[0].qty)
-
+    console.log(outcome[0].qty, "quantity is changing")
 }
+
+

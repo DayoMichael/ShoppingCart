@@ -3,6 +3,7 @@ import { quantityChanged } from './quantitychange.js'
 import { removeFromCartClicked} from './removeItem.js'
 import { totalPrice } from './gettotal.js'
 import { totalQuantity } from './gettotal.js'
+// import { onSignIn } from './signin.js'
 
 
 // event listener for the add to cart button
@@ -21,7 +22,7 @@ export function quantityChange(){
     for (let i = 0; i< quantityOfItems.length; i++) {
         let inputs = quantityOfItems[i];
         inputs.addEventListener('change', quantityChanged);
-      
+        
          
     };
     totalPrice()
@@ -38,3 +39,12 @@ export function removeItem () {
     };  
 }
 
+//event listener for the google signin button
+export function googleSignIn () {
+    let signIn = document.getElementsByClassName ('g-signin');
+    for  (let i = 0; i< signIn.length; i++) {
+        let signIns = signIn[i];
+        signIn.addEventListener('click', onSignIn);
+        console.log('google signin clicked')
+    };  
+}
