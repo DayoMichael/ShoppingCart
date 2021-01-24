@@ -9,21 +9,21 @@ import { totalQuantity } from './gettotal.js'
 // event listener for the add to cart button
 export function addEventListener(){
     let addToCarts = document.getElementsByClassName ('add-cart');
+    console.log('addtocarts', addToCarts.length)
+   
     for  (let i = 0; i< addToCarts.length; i++) {
         let addToCart = addToCarts[i];
-        addToCart.addEventListener('click', addToCartClicked);
-        console.log('i have been added')
-    };
+        addToCart.addEventListener('click', addToCartClicked);   
+    }; 
 }
 
 // function to listen to quantity change
 export function quantityChange(){
     let quantityOfItems = document.getElementsByClassName ("product-quantity-input");
+    console.log('quantity', quantityOfItems)
     for (let i = 0; i< quantityOfItems.length; i++) {
         let inputs = quantityOfItems[i];
-        inputs.addEventListener('change', quantityChanged);
-        
-         
+        inputs.addEventListener('change', quantityChanged);  
     };
     totalPrice()
     totalQuantity()

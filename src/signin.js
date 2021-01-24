@@ -10,9 +10,14 @@ function onSignIn(googleUser) {
 
     // The ID token you need to pass to your backend:
     let id_token = googleUser.getAuthResponse().id_token;
-    console.log("ID Token: " + id_token);
+    //console.log("ID Token: " + id_token);
     localStorage.setItem('Token', id_token);
 }
 // const IdToken = onSignIn(googleUser)
 // console.log(IdToken)
+
+
+
+
+
 
